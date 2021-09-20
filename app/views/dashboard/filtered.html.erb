@@ -1,0 +1,15 @@
+<table class="main_table">
+  <tdead>
+    <tr>
+      <% @allowed_attributes.each do |field_name| %>
+        <th><%= field_name %></th>
+      <% end %>
+  </thead>
+<% @tickers.each do |ticker| %>
+  <tr>
+    <% @allowed_attributes.each do |field_name| %>
+      <td><%= ticker.send field_name %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

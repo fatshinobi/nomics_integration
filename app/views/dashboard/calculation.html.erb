@@ -1,0 +1,11 @@
+<%= form_tag dashboard_calculation_path, method: :get do %>
+  Currency:
+  <%= select_tag 'currency_code', options_for_select(@currencies_names)%>
+  Based on:
+  <%= select_tag 'base_code', options_for_select(@currencies_names)%>
+  <%= submit_tag 'Calculate' %>
+<% end %>
+
+<div id='results_div'>
+  <%= "1 #{@curency_name} == #{@result_price} #{@base_name}" if @result_price %>
+</div>

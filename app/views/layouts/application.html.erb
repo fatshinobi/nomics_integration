@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NomicsIntegration</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to("Task 1", dashboard_index_path) %> |
+    <%= link_to("Task 2", dashboard_filtered_path) %> |
+    <%= link_to("Task 3", dashboard_calculation_path) %>
+    <%= yield %>
+  </body>
+</html>

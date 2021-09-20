@@ -1,0 +1,74 @@
+<table class="main_table">
+  <tdead>
+    <tr>
+      <th rowspan=2>currency</th>
+      <th rowspan=2>symbol</th>
+      <th rowspan=2>name</th>
+      <th rowspan=2>status</th>
+      <th rowspan=2>price</th>
+      <th rowspan=2>price_date</th>
+      <th rowspan=2>price_timestamp</th>
+      <th rowspan=2>circulating_supply</th>
+      <th rowspan=2>max_supply</th>
+      <th rowspan=2>market_cap</th>
+      <th rowspan=2>market_cap_dominance</th>
+      <th rowspan=2>num_exchanges</th>
+      <th rowspan=2>num_pairs</th>
+      <th rowspan=2>num_pairs_unmapped</th>
+      <th rowspan=2>first_candle</th>
+      <th rowspan=2>first_trade</th>
+      <th rowspan=2>first_order_book</th>
+      <th rowspan=2>rank</th>
+      <th rowspan=2>rank_delta</th>
+      <th rowspan=2>high</th>
+      <th rowspan=2>high_timestamp</th>
+      <th colspan=7>1d</th>
+      <th colspan=7>7d</th>
+      <th colspan=7>30d</th>
+      <th colspan=7>365d</th>
+      <th colspan=7>ytd</th>
+    </tr>
+    <tr>
+      <% (0..4).each do %>
+        <th>volume</th>
+        <th>price_change</th>
+        <th>price_change_pct</th>
+        <th>volume_change</th>
+        <th>volume_change_pct</th>
+        <th>market_cap_change</th>
+        <th>market_cap_change_pct</th>
+      <% end %>
+    </tr>
+  </thead>
+<% @tickers.each do |ticker| %>
+  <tr>
+    <td><%= ticker.currency %></td>
+    <td><%= ticker.symbol %></td>
+    <td><%= ticker.name %></td>
+    <td><%= ticker.status %></td>
+    <td><%= ticker.price %></td>
+    <td><%= ticker.price_date %></td>
+    <td><%= ticker.price_timestamp %></td>
+    <td><%= ticker.circulating_supply %></td>
+    <td><%= ticker.max_supply %></td>
+    <td><%= ticker.market_cap %></td>
+    <td><%= ticker.market_cap_dominance %></td>
+    <td><%= ticker.num_exchanges %></td>
+    <td><%= ticker.num_pairs %></td>
+    <td><%= ticker.num_pairs_unmapped %></td>
+    <td><%= ticker.first_candle %></td>
+    <td><%= ticker.first_trade %></td>
+    <td><%= ticker.first_order_book %></td>
+    <td><%= ticker.rank %></td>
+    <td><%= ticker.rank_delta %></td>
+    <td><%= ticker.high %></td>
+    <td><%= ticker.high_timestamp %></td>
+
+    <% [ticker._1d, ticker._7d, ticker._30d, ticker._365d, ticker.ytd].each do |interval_value| %>
+      <%= render partial: 'interval', locals: {value: interval_value} %>
+    <% end %>
+
+
+  </tr>
+<% end %>
+</table>
