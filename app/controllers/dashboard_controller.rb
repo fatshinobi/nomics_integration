@@ -46,10 +46,19 @@ class DashboardController < ApplicationController
     render 'error_result'
   end
 
+  def fiats
+    @fiat = 'EUR'
+    set_tickers(%w(BTC ETH XRP), @fiat)
+  rescue Exception => e
+    @error_message = e.message
+    render 'error_result'
+  end
+
   private
 
-  def set_tickers(currencies_list)
+  def set_tickers(currencies_list, fiat=nil)
     request = TickerApi.new
+    request.fiat = fiat if fiat
     request.currencies_list = currencies_list
     @tickers = request.process
   end

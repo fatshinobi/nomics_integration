@@ -14,6 +14,9 @@ Ie: We want to view the [circulating_supply, max_supply, name, symbol, price] fo
 BTC]
 
 Task 3:
+Retrieve a specific cryptocurrency to specific fiat. Ie: BTC in ZAR or ETH in USD
+
+Task 4:
 Calculate the price of one cryptocurrency from another, in relation to their dollar value
 Ie: 1BTC = $100, 1ETH = $50, therefore 1ETH == 0.5BTC
 
@@ -30,4 +33,7 @@ Task 2
 ![screen_task2](https://user-images.githubusercontent.com/14085661/134137660-9dd45c57-2596-4a7f-9c64-2c5dd40fcb2a.jpg)
 
 Task 3
+![screen_task_new3](https://user-images.githubusercontent.com/14085661/134143173-639e201a-06db-44e7-8ae2-0f019b73265b.jpg)
+
+Task 4
 ![screen_task3](https://user-images.githubusercontent.com/14085661/134137683-65e1466a-c633-4e73-877a-93e561e4a8f4.jpg)

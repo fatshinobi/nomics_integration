@@ -1,0 +1,22 @@
+<h2>Prices in <%= @fiat %></h2>
+
+<table class="main_table">
+  <tdead>
+    <tr>
+      <th>currency</th>
+      <th>symbol</th>
+      <th>name</th>
+      <th>status</th>
+      <th>price</th>
+    </tr>
+  </thead>
+<% @tickers.each do |ticker| %>
+  <tr>
+    <td><%= ticker.currency %></td>
+    <td><%= ticker.symbol %></td>
+    <td><%= ticker.name %></td>
+    <td><%= ticker.status %></td>
+    <td><%= ticker.price %></td>
+  </tr>
+<% end %>
+</table>
