@@ -50,6 +50,6 @@ class ApiRequest
   end
 
   def key
-    '06d2ca289c474c5f9c25e3b4597a1c2b94b9e8af'
+    'set_your_api_key_here'
   end
 end
